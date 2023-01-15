@@ -23,12 +23,8 @@ def get_home():
 
 @app.route("/turn-on")
 def get_turnon():
-    try:
-        wait_time = machine.turn_on()
-        sleep(wait_time)
-        return redirect(f"https://{code_domain}", code=302)
-    except Error as e:
-        return e
+    machine.turn_on()
+    return redirect(f"https://{code_domain}", code=302)
 
 
 @app.route("/turn-off")

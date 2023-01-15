@@ -1,4 +1,5 @@
 from google.cloud import compute_v1
+from time import sleep
 
 
 class CloudMachine():
@@ -15,15 +16,18 @@ class CloudMachine():
 
     def turn_on(self) -> int:
         status = self.get_status()
-        wait_time = 1
         if status == "SUSPENDED":
             self.client.resume(self.info)
-            wait_time = 10
         elif status == "TERMINATED":
             self.client.start(self.info)
-            wait_time = 20
 
-        return wait_time
+        while status != "RUNNING":
+            sleep(3)
+            status = self.get_status()
 
     def turn_off(self):
+        status = "RUNNING"
         self.client.stop(self.info)
+        while status != "TERMINATED":
+            sleep(3)
+            status = self.get_status()
