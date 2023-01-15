@@ -15,14 +15,15 @@ class CloudMachine():
 
     def turn_on(self) -> int:
         status = self.get_status()
+        wait_time = 1
         if status == "SUSPENDED":
             self.client.resume(self.info)
-            return 10 # wait time
+            wait_time = 10
         elif status == "TERMINATED":
             self.client.start(self.info)
-            return 20 # wait time
-        else:
-            raise Exception("Can't turn on instance")
+            wait_time = 20
+
+        return wait_time
 
     def turn_off(self):
         self.client.stop(self.info)

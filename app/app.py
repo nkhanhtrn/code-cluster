@@ -11,8 +11,9 @@ machine = CloudMachine(
     project=config['DEFAULT']['Project'],
     instance=config['DEFAULT']['Instance'],
     zone=config['DEFAULT']['Zone'],
-    )
+)
 code_domain = config['DEFAULT']['Domain']
+
 
 @app.route("/")
 def get_home():
@@ -33,4 +34,4 @@ def get_turnon():
 @app.route("/turn-off")
 def get_turnoff():
     machine.turn_off()
-    return "Success"
+    return redirect(f"/", code=302)
