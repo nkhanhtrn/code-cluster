@@ -1,0 +1,13 @@
+[Unit]
+Description=Code Cluster WSGI
+After=network.target
+
+[Service]
+User=nkhanh_trn
+Group=www-data
+WorkingDirectory=/home/nkhanh_trn/code-cluster
+Environment="PATH=/home/nkhanh_trn/code-cluster/env/bin"
+ExecStart=/home/nkhanh_trn/code-cluster/env/bin/gunicorn --workers 1 --bind 0.0.0.0:5000 wsgi:app
+
+[Install]
+WantedBy=multi-user.target
