@@ -25,9 +25,8 @@ class CloudMachine():
             sleep(3)
             status = self.get_status()
 
+        sleep(3)
+
     def turn_off(self):
-        status = "RUNNING"
         self.client.stop(self.info)
-        while status != "TERMINATED":
-            sleep(3)
-            status = self.get_status()
+        sleep(3)
