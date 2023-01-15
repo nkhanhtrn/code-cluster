@@ -1,14 +1,76 @@
-<h1>
-	Status: {{ status }}
-</h1>
-<a href="/turn-on">
-	<button>
-		<h1>TURN ON</h1>
-	</button>
-</a>
+<html>
 
-<a href="/turn-off">
-	<button>
-		<h1>TURN OFF</h1>
-	</button>
-</a>
+<head>
+  <link
+    href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAYAAADDPmHLAAAAAXNSR0IArs4c6QAAEABJREFUeF7tXXl4VNUV/93Zsk8CgoKACQmLC6AssggqghsIKOCGbV1qwK3aqrW2oijWtVqrrday6oegIIjigoIsomVREMuuEZTIIotkm2Qms95+52lCMpnJvHn3zeTNe+98X/7Ku/ee+zu/e+cu557DEEM6TTtcZLE5erFQ6ExY2EBwDALgjFXO/H+LIFAFhvUI8Q3cYtkSCvi27rvlpD3NacKi/bPTqxVF1kDocQDXtEhXzEbVQmBB0GaZvO/GvIhEiEiA/BllkxljUwDuUEsLs56WRID5OOePlk5sTQO6kTQhQP7Msm0M6NGS6pptJwYBDmwvLW7ds2HtjQhQMOvYSnA2LDHNm7VqAgHGV+29+YThdbrUE6Dz9KNjuMW6RBNKmkokFAEWCl7+/aS271IjEgGK5rhODHp9e8FYRkJbNivXBgKce6xpjoI91+cckQiQP7N8BgMv1oZ2phbJQICDzSwtbjWRFU6v6hayBL5JRqNmG9pCwBKydWcFs8smIITXtaWaqU1SELDgOtZ5VvmznPN7k9Kg2YimEGCM/Z0VzCxbDWCopjQzlUkWAp8QAaoA5CSrRbMdTSHgIgJwTalkKpNUBEwCJBVu7TVmEkB7NkmqRiYBkgq39hozCaA9myRVI5MASYVbe42ZBNCeTZKqkUmApMKtvcZMAmjPJknVKCUIkG5lyLQDWXYGCwNqA4AnwFHt5wgZ6BgrEThoigBpVoYz21rRv50Np7W2It9pRYHTIhk+kgRCwCF3CAeqQ9hxLIjNhwP4/FAAP3lCSR1FajeWTBxkEeCEDIbRhQ5U+ziWfu+HO6DesMtNY7g034FRhXb0b2eHwyoGJ80I638MYFGJF+9950NQPVWhRxxiEoCm3GXjnOiS97NljrhDuGeNG2sP+oUsdVZbG4p7puGSfAdsFqGqohbeXRHEE194sHqfmK7UgF5xiEmAM06w4v0rGj8Eoqn3vs9q8M5uX9yWG3yyHXf3SUffk2xxl1VaYPYOL5743C00G+gVh5gEGNLBjtcuzW6CPU21k9e6Mf8bryy7dGtlxV/6Z2BoR7us79X+6O3dPty7pgZKfxH0ikNMAnTNs2L5+MhPAQnMR9a7MWdndBLQb/ofemdgUq90WKM+RFPb3JHre36zBy98VauoMb3iEJMAZLON1+VJC6Bo8uQXHkzf1hTYnm2sePa8LNDo14LQT9foJVX4uiwYtzp6xSEmAQipqYMycf3pac2C9vKWWvxtk6f+G/r+oQGZCVvgxW3BXwos/d6HO1bVKCquRxxkEYD25EvHxn4R/nGpH49scOOPfTMwtos235XSLNBnXgVcvvhXA3rEQRYBaLjMHZGDwSfHXrnT4pC2TFqWW1ZUY3mpsq2h3nCQTYB+J9mwcFTL+I7SwdN+V0gatXSw0yqdobPTqvjnRWQxqDccZBOARvTLw7NxaUHit3Fk5DX7/Pj4Bz/WHfRjnyvUZPtGx8Pjuzqkn5scR3xTzuJftoRKZyk94RAXAU7OtmD5OGfUs3mlgNaVqw1yzN3lxcxtXhx2yzvPpxH55qicn1+5ypQVP/gx8eNqmV83/UxPOMRFAILi6m5pePrcTMXgRStIRnlonRuHauQZvmE9cy7Nxrkd5M9Ma/b7ceMy5QTQEw5xE4A6/4+hWbiiSJ1VvjfIMWWdB2+WyDtRjESgP/XLwG1npssmpchWsGEjesBBEQEy7QxfTMgV/imga9vfLq/Gtp/iP5hpaIgH+mdgYk/5BPjP1lo8vfH4mYVs5oR9qAccFBHgzt7puKePWCyJGj/HuPdcKCkXMz4dNS8blyv5DcgVkW1gwzb0gEPcBKBF1/zLclQ51yevnvUHA1hzwI+tR4PYVRYE/STIlfZZFjw5JBPnx3HB5PZznP16pbBPg15wiIsA5Lyx9AonaBWcCKFTuu8qg9hfHcKPNSFpQUh7/9og4CUnFAZk2xk6ZFtA/gRkhHh9CV7d4cXUDW4h9fWEQ1wEmHZhNi7Ol7/aFkI5AYUrvRzDFlWirFb+LBNJDT3hIJsAIzs78NKwrASYJXlV3r6yBh/ujd+JpaGGesNBFgEybQwrr3SiXVZipv5kUODZTR68tEWZL0CdfnrEQRYByJNnUhzbrGQYVG4bNNk/FcVfQW4ddd/pEYeYBCBn0A/HOuNebDUE96sjARTlWeGM88w+XgOFf093COS29tkBZTd/DevTKw4xCTB3RDbIkVOp0Jn+BQurEAhxnNfRjlGFDlx0il34EKk5fWg3MXtHLZ7fXCs9IFFD9IpDswSgBxoLLhO7Av7zf91YEOY4Sg8fqO6B7W0Y0M6GM9vGv52LZNQ9FUEsKPFh8W4vjnnUMTy1o2ccmiXAGyNzJCMplW8rghixuCqmO3aGjaFXG6v09qCQ/nIt0n0/+SHSwivcwYRGOJ0PHKgJYdvRALb8FMSWowFFvn5y+qZnHKISQA3W37m6Bu9/J7btIgMRCej+n7GfDa/WtC7H+HrHISoB4r1iDQeztCqE4YsqY45+OUZoyW/0jkNEAtCK/ePxzricLMKN9OBaN+Z9rfyKtyWNXte2EXCISIBHz8nEb05r3g28OQOVezkGvVEZ18WOFgweroMRcGhCALps+XxCLuiuW6nM2l6Lxz4Xv29X2r4a5YyCQxMCTDg1DU8MFnP5uvitKtAOIJXFKDg0IQDt+2nlq1Q2Hwlg/HsupcU1U84oODQiADlYrL02V2jx9+gGN17ZkdqLPyPh0IgAt/ZKx/1ni7l6DVlQKYVsSWUxEg6NCPDW6Bz0OVH59L/9WBCj36Ho86ktRsKhngB5aQybfpUn5Ov3r69q8dzm1F79Gw2HegJcXuTA80PFPH5+/aELaw8GUnr4Gw2HegI8d36W0JNuuqDp9VpFUs/pE8E0o+FQT4BPr85FpxzlLl962f4ZDQeJAG0yLNh4Xa7QgKJHnfS2L5XFiDhIBCBXb3J1FpEp69x4bVdq7/+NiINEgPv6ZeD2OB5XRiLKNR+48MWh1F4AGhEHiQAzLsrGhaco9/sjQvR7vUJVNyyR2UhpWSPiIBFg9VXxPa4MB5h2AN1eKVcchFGpwdQuZ0QcWJfZZXzXDa2E3L4PVocweEGl2vZIan30xtCIOLBhCys5vfoREfL7p6feqSyFuVbp9ZOIpCIObMIHVfz1kWKu35/u9+MGwZArIsCrUXZQexuMiAO7a3U1f0HwCJgCRE5aIRZzRw0jitQxpsgBI+LA/rrBzR8cIHYFTIkZ7lqtLPyqiNHULHtzj3QYEQf20v88XPQMQDTunpqGVFqXGmcAqYgDe2V7Lb/xDOUewAT4u3t8+P0nqT0DPDwwE0bEgc3bVcuvO1WMAB/t9eO2lam9Bnh8cCaMiANbVOLlFHJVRMgHgHwBUlkor4ERcWBLdns5rYBFhBIwjHg7tV3BaAdgRBzYwhIvv1JwBqCXQH3mVohwqMXLPnNeFoyIA5uzs5aLPAOrs1zvuRWo8Kr3Jj8RjKDn55MHZEjP0G9eXt0oSKXoM7BUxYFN2+rhasT/ufoDFzZq+DqYYgrOvji7PrT8G1978cDa4w4sasX/STUc2GMb3JxGhag8tdGDaVvFonCJ6hCtPIWRfWeMExTgsU4oPvGYJcfXLcU90qXZQVRSDQd26woXpwQIovLJfj9u0uB9AGUXWTza2SSWMOUcphfMdUKJMIyIA7vs7UoenhlUCRl8QaD3vApQLF6tCGXbnjcyO+JjF1qv0LqlTiJlBlXSj1TDgXV/pZxvuz4PduUOwfU43fdpDRZ9Kx4SRgnw4WUoSeVLw7NxSZTQthSHeND84zMABa4yIg6SR9A7Y3KkSF2iEv67Klqf0vIU2+DFC7JwQafobm4UmXxk2NmFEXGQCEC3YHQbpobcuqIayxSmZFOjfQpnS6t9yvHXnETKG2REHCQCqOEMUQf2D66QdCrYEmsBGvGUz6htRuzfs2c2efDvsNjBRsRBIgDF4aOwMPQwQg2htPJ3r0ne7SCFoKW0Mdd0l3+pddX7Lmw63NiN3Yg41D8NmzIwEzcJXgs3JA+NLhpliRQy2LXd06TcgbTdkys0Sw19szKiF7PRcKgnAL0LJLdoNVO8U4jYKevdoK2RmmK1QMpaRo4s5MwZrzQXOt5oODQKEPHPC7IwulDsZjDcGBS/9+H1Hqw9KB6xm1LFUN7Cq7o5QGFclAhlCzn/zUpUN3NeYSQcGhGAjkwpAxdl4lJbyGV64bc+LC/1yX5BRCFiz2hjlaKVD+tkR482VqH4RdSnh9e7MWdn828YjYRDkyhhd/fJwF291dkSRiMRJYb6pjwoJYSuoqRQAcBuBTKsTDqv75hjwSk5FnTOtar6k0RvFycsdYEynMcSo+DQhAB0Irbk8hx0b5WAaSAW6gn8PyWMou0pZSOTI0bBIWKo2HynBe9d7ow7K7ccYFviG1qE3rDMhQ0/xvd62Qg4RI0WPrSjHfRaNt68fC1h4ObapDyU9GaB8gUrEb3j0GzCCLpIeXFY6pKA0tHfuaoGdOwrInrGoVkCEGgUNYOih1FWj1QSuu27Y1UNKHaRGqJXHGISgMCji5XpF2WjY4JSxqphoIZ1LC/14/7PalT3UdQjDrIIQOBSAEU6Jh3bRd2DIjWNT6OewtR/oPD3Xo4uesNBNgHqwBnSwY6pgzIUHcHKAVjJN5RHaPYOL6ZvrRXOCi63fb3gEDcBCCC6hBlT6MDvzkqXEkK2lBxxh6S0NJQRnA6Uki16wEERAeqApmUhpZUb3zUNIzrbpexeiRZvkOOzAwEspmPlH3wIyjvXSahaqYyDEAEaokoOmP3b23BuBxvOaW9Ht1ZWVc4QaFx/Wx6UQtCtOxjAmv3+pE3zSliTajioRoBwsMjJtGsrq3SkTGf7J2Va0C7TIi0m020MaVbAYWXgHFJyKW8QqPCGcMTNQVM7pZ2jtDMl5cFmb+6UGCmZZbSOQ8IIkEyQzbaUI2ASQDl2uihpEkAXZlTeCZMAyrHTRUmTALowo/JOmARQjp0uSpoE0IUZlXfCJIBy7HRRkghAT2TFoiTrAgpDdqKKFcwq+wgclxiy+0bvNMMyVjDj2CNg7GGjY2HI/nM+leXPKh/LOF9sSAAM3mnO2DjWadrhIqvVvtvgWBiy+8Ggv4t0gV8ws2w+gGsMiYJxO71gb3HrayUCdHq1osga4DsBrl2HP+MaKgE9Z76gjZ2+78a8PfUuPPkzyiYzhscS0JpZpcYQ4BwPlk5s/Tip1ciHK39m2TYG9NCYvqY6KiLAge2lxa171lXZxImvYNaxleBsmIptmlVpBQHGV+29+YThDdWJ6MXZefrRMZxZ5oMx8dipWum8kfXg3MN46NrvJ7V9NxyGqG68RXNcJwZ8gccZeLGRsUv1vnOwmTaHbfKe63OOROpLTD/uwulV3UK2QF/GWV/OeV8A9CeWaDDVUdWu/pS25UvG2Jec8S8tAduX301yljSn7v8Bf0A6Mx9wD3oAAAAASUVORK5CYII="
+    rel="icon" type="image/x-icon" />
+  <title>Code Cloud</title>
+  <style>
+    body {
+      text-align: center;
+      padding-top: 50px;
+    }
+
+    .button {
+      border: none;
+      color: white;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 18px;
+      width: calc(100% - 100px);
+      margin: 20px 0;
+    }
+
+    #button-on {
+      background-color: #4CAF50;
+    }
+
+    #button-on:hover {
+      background-color: #7adb7d;
+    }
+
+    #button-off {
+      background-color: #f44336;
+    }
+
+    #button-off:hover {
+      background-color: #fd8077;
+    }
+
+    .status {
+      color: #797979;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .TERMINATED {
+      color: #f44336;
+    }
+
+    .RUNNING {
+      color: #4CAF50;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1 class="status">
+      Status: <span class="{{status}}">{{ status }}</span>
+    </h1>
+    <a href="/turn-on">
+      <button class="button" id="button-on">
+        <h1>TURN ON</h1>
+      </button>
+    </a>
+
+    <a href="/turn-off">
+      <button class="button" id="button-off">
+        <h1>TURN OFF</h1>
+      </button>
+    </a>
+  </div>
+</body>
+
+</html>
