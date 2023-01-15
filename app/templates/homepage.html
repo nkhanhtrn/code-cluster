@@ -61,7 +61,13 @@
     </h1>
     <a href="/turn-on">
       <button class="button" id="button-on">
-        <h1>TURN ON</h1>
+        <h1>
+          {% if status == "RUNNING" %}
+          ACCESS
+          {% else %}
+          TURN ON
+          {% endif %}
+        </h1>
       </button>
     </a>
 
