@@ -28,5 +28,5 @@ class CloudMachine():
         sleep(5)
 
     def turn_off(self):
-        self.client.stop(self.info)
+        self.client.suspend(self.info)
         sleep(3)
