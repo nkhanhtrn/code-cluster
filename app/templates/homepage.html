@@ -9,11 +9,13 @@
     body {
       text-align: center;
       padding-top: 50px;
+      cursor: pointer;
     }
 
     .button {
       border: none;
       color: white;
+      background-color: #7b7b7b;
       padding: 15px 32px;
       text-align: center;
       text-decoration: none;
@@ -21,21 +23,25 @@
       font-size: 18px;
       width: calc(100% - 100px);
       margin: 20px 0;
+      cursor: not-allowed;
     }
 
-    #button-on {
+
+    .button-on {
       background-color: #4CAF50;
+      cursor: pointer;
     }
 
-    #button-on:hover {
+    .button-on:hover {
       background-color: #7adb7d;
     }
 
-    #button-off {
+    .button-off {
       background-color: #f44336;
+      cursor: pointer;
     }
 
-    #button-off:hover {
+    .button-off:hover {
       background-color: #fd8077;
     }
 
@@ -59,8 +65,8 @@
     <h1 class="status">
       Status: <span class="{{status}}">{{ status }}</span>
     </h1>
-    <a href="/turn-on">
-      <button class="button" id="button-on">
+    <a href="turn-on">
+      <button class="button button-on">
         <h1>
           {% if status == "RUNNING" %}
           ACCESS
@@ -71,8 +77,8 @@
       </button>
     </a>
 
-    <a href="/turn-off">
-      <button class="button" id="button-off">
+    <a href="turn-off">
+      <button class='button {% if status == "RUNNING" %} button-off {% endif %}'>
         <h1>TURN OFF</h1>
       </button>
     </a>
