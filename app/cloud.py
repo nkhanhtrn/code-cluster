@@ -25,8 +25,12 @@ class CloudMachine():
             sleep(3)
             status = self.get_status()
 
-        sleep(5)
+        sleep(3)
+
+    def suspend(self):
+        self.client.suspend(self.info)
+        sleep(3)
 
     def turn_off(self):
-        self.client.suspend(self.info)
+        self.client.stop(self.info)
         sleep(3)

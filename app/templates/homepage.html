@@ -13,9 +13,8 @@
     }
 
     .button {
-      border: none;
-      color: white;
-      background-color: #7b7b7b;
+      border: 3px solid #797979;
+      color: #797979;
       padding: 15px 32px;
       text-align: center;
       text-decoration: none;
@@ -24,25 +23,41 @@
       width: calc(100% - 100px);
       margin: 20px 0;
       cursor: not-allowed;
+      transition-duration: 0.4s;
     }
 
-
     .button-on {
-      background-color: #4CAF50;
+      border-color: #4CAF50;
+      color: #4CAF50;
       cursor: pointer;
     }
 
     .button-on:hover {
-      background-color: #7adb7d;
+      background-color: #4CAF50;
+      color: white;
     }
 
+    .button-suspend {
+      border-color: #008CBA;
+      color: #008CBA;
+      cursor: pointer;
+    }
+
+    .button-suspend:hover {
+      background-color: #008CBA;
+      color: white;
+    }
+
+
     .button-off {
-      background-color: #f44336;
+      border-color: #f44336;
+      color: #f44336;
       cursor: pointer;
     }
 
     .button-off:hover {
       background-color: #fd8077;
+      color: white;
     }
 
     .status {
@@ -76,7 +91,11 @@
         </h1>
       </button>
     </a>
-
+    <a href="suspend">
+      <button class='button {% if status == "RUNNING" %} button-suspend {% endif %}'>
+        <h1>SUSPEND</h1>
+      </button>
+    </a>
     <a href="turn-off">
       <button class='button {% if status == "RUNNING" %} button-off {% endif %}'>
         <h1>TURN OFF</h1>

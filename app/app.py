@@ -26,6 +26,10 @@ def get_turnon():
     machine.turn_on()
     return redirect(f"https://{code_domain}", code=302)
 
+@app.route("/suspend")
+def get_suspend():
+    machine.suspend()
+    return redirect(f"/", code=302)
 
 @app.route("/turn-off")
 def get_turnoff():
